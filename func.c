@@ -45,13 +45,7 @@ void *thread_func(void *arg){
     return NULL;
 }
 
-void *zapis(void *arg){
-    size_t i=0,j=0;    
-    pthread_mutex_lock(&mutex);
-    
-    pthread_mutex_unlock(&mutex);
-    return NULL;
-}
+
 
 void size_check(void){
     char buf[buf_size];    
