@@ -1,0 +1,7 @@
+W celu uruchomienia programu należy wpisać w terminalu komende:
+
+./test
+
+lub 
+gcc -Wall -Wextra mainn.c o test  //mozna rowniez stosowac -o1 / -o2
+./test    
