@@ -3,7 +3,7 @@
 #include<string.h>
 #include<unistd.h>
 #define buf_size 512
-
+#define big 234
 double proc(unsigned long long int tab[11],unsigned long long int ptab[11]){
    unsigned long long int Idle,PIdle,PNonIdle,PTotal,NonIdle,Total,totald,idled;
     Idle = tab[4]+tab[5];
