@@ -1,29 +1,4 @@
 #include "header.h"
-#include "func.c"
-/*
-#include<stdio.h>
-#include<stdlib.h>
-#include<pthread.h>
-#include<string.h>
-#include<unistd.h>
-#define buf_size 256
-#define stat_fields 11
-pthread_mutex_t mutex;
-size_t a=2;
-size_t b=3;
-size_t core_amount=1;
-size_t** tab = NULL;
-size_t** ptab = NULL;
-double* p_core_usage=NULL;
-
-size_t initialize();
-void free_global(void);
-void *thread_func(void *arg);
-void *zapis(void *arg);
-void size_check(void);
-void *read_th(void *arg);
-void *analyze_th(void *arg);
-void *print_th(void *arg);
 
 size_t initialize(){
     size_t i=0;
@@ -168,60 +143,4 @@ void *print_th(void *arg){
     }
     pthread_mutex_unlock(&mutex);
     return NULL;
-}
-*/
-int main(){
-        
-    pthread_t reader,analyzer,printer;    
-    size_check();
-    size_t i=0,j=0;
-    char buf[buf_size];
-    char* token;     
-    //FILE *fp; 
-        
-    //fgets(buf,buf_size,fp);
-    //printf("%s",buf);    
-    if(initialize()){
-        
-            
-      for(i=0;i<5;){              
-        pthread_create(&reader,NULL,&read_th,NULL);
-        pthread_create(&analyzer,NULL,&analyze_th,NULL);
-        pthread_create(&printer,NULL,&print_th,NULL);        
-        pthread_join(reader,NULL);
-        pthread_join(analyzer,NULL);
-        pthread_join(printer,NULL);
-        
-        //printf("%lf %lf\n",p_core_usage[0],p_core_usage[1]);
-              
-        }
-             
-        free_global();   
-    }
-        
-        
-        
-    
-    
-    //
-   // 
-
-       
-    //pthread_mutex_lock(&mutex);
-        
-    
-    
-    /*
-    initialize(a,b);
-       
-    pthread_t t1,t2;
-    
-    pthread_create(&t1,NULL,&zapis,NULL);
-    pthread_create(&t2,NULL,&thread_func,&j);
-    
-    printf("MAIN\n");
-    pthread_join(t1,NULL);
-    pthread_join(t2,NULL);
-    */    
-    return 0;
 }
