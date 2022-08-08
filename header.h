@@ -4,6 +4,7 @@
 #include<pthread.h>
 #include<string.h>
 #include<unistd.h>
+#include<assert.h>
 #define buf_size 256
 #define stat_fields 11
 pthread_mutex_t mutex;

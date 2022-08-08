@@ -1,5 +1,6 @@
 #include "header.h"
 #include "func.c"
+#include "unit_test.c"
 
 int main(){
         
