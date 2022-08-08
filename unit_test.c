@@ -1,5 +1,5 @@
 #include "header.h"
-
+/*Prosty test jednostkowy z uzyciem assert sprawdzajacy wyniki obliczone przez analyzer*/ 
 void unit_result_test(void){
     size_t i=0;    
     

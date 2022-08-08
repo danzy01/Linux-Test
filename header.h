@@ -17,9 +17,9 @@ double* p_core_usage=NULL;
 
 size_t initialize();
 void free_global(void);
-void *thread_func(void *arg);
-void *zapis(void *arg);
+
+
 void size_check(void);
-void *read_th(void *arg);
-void *analyze_th(void *arg);
-void *print_th(void *arg);
+void *read_th(void*);
+void *analyze_th(void*);
+void *print_th(void*);

@@ -1,5 +1,5 @@
 #include "header.h"
-
+/*Przydzielenie pamieci dla wskaznikow globalnych*/
 size_t initialize(){
     size_t i=0;
     tab = (size_t **)malloc(core_amount*sizeof(size_t));    
@@ -12,10 +12,10 @@ size_t initialize(){
     }
     p_core_usage = (double*)malloc(core_amount*sizeof(double));
     if((tab==NULL) || (ptab==NULL) || (p_core_usage==NULL))return 0;
-    else return -1;   
+    else return 1;    
 
 }
-
+/*Dealokacja przydzielonej pamieci dla zmiennych globalnych*/
 void free_global(void){
     size_t i=0;
     for(i=0;i<core_amount;i++){
@@ -29,7 +29,7 @@ void free_global(void){
     free(p_core_usage);
     
 }
-
+/* Sprawdzenie ilosci CPU w Proc/stat*/
 void size_check(void){
     char buf[buf_size];    
     FILE *fp;
@@ -37,11 +37,11 @@ void size_check(void){
     fp=fopen("/proc/stat","r");
     if(fp){
         while(fgets(buf,buf_size,fp)){
-            if(strstr(buf,"intr")!=NULL)break; 
+            if(strstr(buf,"intr")!=NULL)break; /*Gdy w buforze pojawi sie wyraz intr liczenie zostaje przerwane*/
             size++;
         }
     }
     core_amount = size;
-    fclose(fp);
+    fclose(fp);/*Zamkniecie otworzonego pliku proc/stat*/
 }
 
